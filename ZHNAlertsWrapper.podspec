@@ -9,7 +9,6 @@ Pod::Spec.new do |s|
   s.source                    = { :git => "https://github.com/zhukov-ever/ZHNAlertsWrapper.git", :tag => s.version.to_s, :submodules => true }
   s.source_files              = "Classes", "Classes/**/*.{h,m}"
   s.public_header_files       = "Classes/**/*.h"
-  s.resources                 = "Classes/**/*.xib"
   s.framework                 = "Foundation"
   s.requires_arc              = true
 
