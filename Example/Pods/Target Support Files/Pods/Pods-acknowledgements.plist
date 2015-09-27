@@ -64,7 +64,7 @@ SOFTWARE.
 
 </string>
 			<key>Title</key>
-			<string>ZHNAlertsWrapper</string>
+			<string>ZHNAlertWrapper</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

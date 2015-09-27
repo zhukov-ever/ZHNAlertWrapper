@@ -1,17 +1,17 @@
 PODS:
   - MBProgressHUD (0.9.1)
-  - ZHNAlertsWrapper (0.0.1):
+  - ZHNAlertWrapper (0.0.1):
     - MBProgressHUD (~> 0.9)
 
 DEPENDENCIES:
-  - ZHNAlertsWrapper (from `../`)
+  - ZHNAlertWrapper (from `../`)
 
 EXTERNAL SOURCES:
-  ZHNAlertsWrapper:
+  ZHNAlertWrapper:
     :path: ../
 
 SPEC CHECKSUMS:
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  ZHNAlertsWrapper: ef3d7062d04a89bbfdaaafa81a8b73ebfd0251cc
+  ZHNAlertWrapper: 721c14ab28c2e8c468bda3bea4cf0bc70c3c8899
 
 COCOAPODS: 0.38.2

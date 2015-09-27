@@ -1,2 +1,2 @@
-# ZHNAlertsWrapper
+# ZHNAlertWrapper
 Category for UIViewController
