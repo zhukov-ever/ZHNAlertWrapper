@@ -46,7 +46,18 @@ static void *kHUDPointer;
 - (void) showAlertWithTitle:(NSString*)title
                     message:(NSString*)message
                buttonTitles:(NSArray*)buttonTitles
-              onCloseAction:(void (^)(NSInteger buttonIndex))onCloseAction;
+              onCloseAction:(void (^)(NSInteger buttonIndex))onCloseAction
+{
+    [self showAlertWithTitle:title message:message buttonTitles:buttonTitles cancelTitle:nil style:UIAlertControllerStyleAlert onCloseAction:onCloseAction];
+    
+}
+
+- (void) showAlertWithTitle:(NSString*)title
+                    message:(NSString*)message
+               buttonTitles:(NSArray*)buttonTitles
+                cancelTitle:(NSString*)cancelTitle
+                      style:(UIAlertControllerStyle)style
+              onCloseAction:(void (^)(NSInteger buttonIndex))onCloseAction
 {
     if (SYSTEM_VERSION_LESS_THAN(@"8.0"))
     {
@@ -73,7 +84,7 @@ static void *kHUDPointer;
     {
         __block UIAlertController* _alert = [UIAlertController alertControllerWithTitle:title
                                                                                 message:message
-                                                                         preferredStyle:UIAlertControllerStyleAlert];
+                                                                         preferredStyle:style];
         for (NSInteger i = 0; i < [buttonTitles count]; i++)
         {
             NSString* _buttonTitle = buttonTitles[i];
@@ -88,12 +99,23 @@ static void *kHUDPointer;
                                            }];
             [_alert addAction:_actionClose];
         }
+        if (cancelTitle)
+        {
+            UIAlertAction* _actionCancel = [UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self showNextAlert];
+                
+                if (onCloseAction)
+                    onCloseAction([buttonTitles count]);
+            }];
+            [_alert addAction:_actionCancel];
+        }
         
         [self addAlert:_alert];
     }
     
 
 }
+
 
 
 - (void) showActivityAlert

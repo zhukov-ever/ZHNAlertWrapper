@@ -23,6 +23,13 @@
                buttonTitles:(NSArray*)buttonTitles
               onCloseAction:(void (^)(NSInteger buttonIndex))onCloseAction;
 
+- (void) showAlertWithTitle:(NSString*)title
+                    message:(NSString*)message
+               buttonTitles:(NSArray*)buttonTitles
+                cancelTitle:(NSString*)cancelTitle
+                      style:(UIAlertControllerStyle)style
+              onCloseAction:(void (^)(NSInteger buttonIndex))onCloseAction;
+
 - (void) showActivityAlert;
 - (void) hideActivityAlert;
 

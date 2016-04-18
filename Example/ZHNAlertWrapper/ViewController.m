@@ -37,7 +37,15 @@
         else
             [self.view setBackgroundColor:[UIColor redColor]];
     }];
-    [self showAlertWithTitle:@"With array of buttons" message:@"last one" buttonTitles:@[@"ok", @"cancel", @"i don't care"] onCloseAction:^(NSInteger buttonIndex) {
+    [self showAlertWithTitle:@"With array of buttons"
+                     message:@"last one"
+                buttonTitles:@[@"ok", @"kek kek ekkek", @"i don't care"]
+                 cancelTitle:@"cancel"
+                       style:UIAlertControllerStyleActionSheet
+               onCloseAction:^(NSInteger buttonIndex)
+    {
+        NSLog(@"%@", @(buttonIndex));
+        
         [self showAlertWithTitle:@"title" message:[NSString stringWithFormat:@"button index was pressed: %@", @(buttonIndex)]];
         self.view.backgroundColor = [UIColor lightGrayColor];
     }];
